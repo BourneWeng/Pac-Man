@@ -26,3 +26,14 @@ indicator.stopAnimating()
 indicator.pacmanColor = UIColor.redColor()
 indicator.beansColor = UIColor.greenColor()
 ```
+
+###if you want to control the open progress of mouth, just like this:
+
+```swift
+override func scrollViewDidScroll(scrollView: UIScrollView) {
+    let offset = max(min(0, scrollView.contentOffset.y), -100)
+
+    indicator.openMouthProgress = abs(offset) / 100
+    indicator.hidden = false
+}
+```

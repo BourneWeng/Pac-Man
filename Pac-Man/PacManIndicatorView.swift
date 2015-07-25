@@ -23,6 +23,13 @@ class PacmanIndicatorView: UIView {
         }
     }
     
+    /// 这个参数可以控制吃豆人张开嘴，0~1
+    var openMouthProgress: CGFloat! {
+        didSet {
+            openMouth()
+        }
+    }
+    
     private var dispalyLink: CADisplayLink!
     private var progress: CGFloat = 0
     private var pacmanLayer: CAShapeLayer!
@@ -34,7 +41,7 @@ class PacmanIndicatorView: UIView {
         //吃豆人主体layer
         pacmanLayer = CAShapeLayer()
         pacmanLayer.bounds = CGRectMake(0, 0, CGRectGetHeight(frame), CGRectGetHeight(frame))
-        pacmanLayer.position = CGPointMake(CGRectGetWidth(frame) * 0.3, CGRectGetMidY(frame))
+        pacmanLayer.position = CGPointMake(CGRectGetWidth(frame) * 0.5, CGRectGetMidY(frame))
         pacmanLayer.fillColor = UIColor(red: 234/255.0, green: 90/255.0, blue: 97/255.0, alpha: 1).CGColor
         self.layer.addSublayer(pacmanLayer)
         
@@ -62,7 +69,6 @@ class PacmanIndicatorView: UIView {
         
         backgroundColor = UIColor.clearColor()
         clipsToBounds = true
-        hidden = true
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -121,12 +127,20 @@ class PacmanIndicatorView: UIView {
         }
 
     }
+    
+    func openMouth() {
+        let path = UIBezierPath()
+        let center = CGPointMake(CGRectGetMidX(pacmanLayer.bounds), CGRectGetMidY(pacmanLayer.bounds))
+        path.moveToPoint(center)
+        path.addArcWithCenter(CGPointMake(CGRectGetMidX(pacmanLayer.bounds), CGRectGetMidY(pacmanLayer.bounds)), radius: pacmanLayer.bounds.width / 2.0, startAngle:CGFloat(M_PI_4) * openMouthProgress, endAngle: -CGFloat(M_PI_4) * openMouthProgress, clockwise: true)
+        path.closePath()
+        pacmanLayer.path = path.CGPath
+    }
 
     func startAnimating() {
         if dispalyLink == nil {
             dispalyLink = CADisplayLink(target: self, selector: "drawRect:")
-            dispalyLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
-            hidden = false
+            dispalyLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
         }
     }
     
@@ -137,8 +151,6 @@ class PacmanIndicatorView: UIView {
             
             progress = 0
             drawRect(self.frame)
-            
-            hidden = true
             
             resetBeans()
         }

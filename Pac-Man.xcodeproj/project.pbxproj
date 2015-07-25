@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A867872F1B63D3FA006DED1D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A867872E1B63D3FA006DED1D /* TableViewController.swift */; };
 		A8A1850E1B63ACDB00C59465 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A1850D1B63ACDB00C59465 /* AppDelegate.swift */; };
 		A8A185131B63ACDB00C59465 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A185111B63ACDB00C59465 /* Main.storyboard */; };
 		A8A185151B63ACDB00C59465 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8A185141B63ACDB00C59465 /* Images.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A867872E1B63D3FA006DED1D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A8A185081B63ACDB00C59465 /* Pac-Man.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pac-Man.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A1850C1B63ACDB00C59465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8A1850D1B63ACDB00C59465 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				A8A1850D1B63ACDB00C59465 /* AppDelegate.swift */,
 				A8A1852E1B63ACEB00C59465 /* ViewController.swift */,
+				A867872E1B63D3FA006DED1D /* TableViewController.swift */,
 				A8A185311B63ACF600C59465 /* Class */,
 				A8A185111B63ACDB00C59465 /* Main.storyboard */,
 				A8A185141B63ACDB00C59465 /* Images.xcassets */,
@@ -226,6 +229,7 @@
 				A8A185301B63ACEB00C59465 /* ViewController.swift in Sources */,
 				A8A1852F1B63ACEB00C59465 /* PacManIndicatorView.swift in Sources */,
 				A8A1850E1B63ACDB00C59465 /* AppDelegate.swift in Sources */,
+				A867872F1B63D3FA006DED1D /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +427,7 @@
 				A8A185291B63ACDB00C59465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8A1852A1B63ACDB00C59465 /* Build configuration list for PBXNativeTarget "Pac-ManTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +436,7 @@
 				A8A1852C1B63ACDB00C59465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
